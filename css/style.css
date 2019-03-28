@@ -1,0 +1,19 @@
+/* Navbar */
+
+#main-nav {
+  box-shadow: 2px 2px 5px rgba(52, 152, 219, 0.5);
+  opacity: 0.9;
+}
+
+#main-nav .nav-item {
+  font-size: 1.3rem;
+  margin-right: 1.3rem;
+}
+#main-nav .nav-item a {
+  font-size: 1.3rem;
+  margin-right: 1.3rem;
+  transition: border-bottom ease-in-out 0.5s;
+}
+#main-nav .nav-item a:hover {
+  border-bottom: 1px solid #2980b9;
+}
