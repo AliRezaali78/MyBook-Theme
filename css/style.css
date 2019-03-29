@@ -84,6 +84,39 @@ body {
   margin: auto;
 }
 
+/* Authors */
+#authors header {
+  width: 50%;
+  margin: auto;
+}
+
+#authors img {
+  transform: translateY(-50px);
+}
+
+#authors .card {
+  transition: all ease-in-out 0.5s;
+}
+
+#authors .card:hover {
+  box-shadow: 0px 0px 10px 0.2rem rgba(0, 0, 0, 0.7);
+  background-color: rgba(52, 152, 219, 1);
+  color: #fff;
+}
+
+#authors .card:hover .card-subtitle {
+  display: none;
+}
+
+#authors .fab {
+  display: none;
+  color: #fff;
+}
+
+#authors .card:hover .fab {
+  display: block;
+}
+
 /* Media */
 
 @media screen And (max-width: 768px) {
