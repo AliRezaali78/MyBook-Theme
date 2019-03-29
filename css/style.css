@@ -6,6 +6,7 @@ body {
 
 #main-nav {
   box-shadow: 2px 2px 5px rgba(52, 152, 219, 0.5);
+  opacity: 0.9;
 }
 
 #main-nav .nav-item {
@@ -25,13 +26,13 @@ body {
 
 #home {
   position: relative;
-  background-image: url(../images/mountains.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  min-height: 600px;
+  min-height: 700px;
+  background-image: url(../images/mountains.jpg);
 }
 
-#home .icy-overlay {
+.icy-overlay {
   position: absolute;
   left: 0;
   top: 0;
