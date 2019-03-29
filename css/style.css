@@ -56,6 +56,11 @@ body {
 .btn-primary:hover {
   background-color: #2980b9 !important;
 }
+
+.form-control:focus {
+  box-shadow: inset 0px 0px 0px 0.1rem rgb(52, 152, 219, 0.5) !important;
+}
+
 /* Media */
 
 @media screen And (max-width: 768px) {
