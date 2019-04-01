@@ -20,8 +20,7 @@
     <title>Bootstrap Theme</title>
   </head>
 
-  <body>
-    <!-- START HERE -->
+  <body id="start" data-spy="scroll" data-target="#main-nav">
     <!-- Nav Bar -->
     <nav
       class="navbar navbar-expand-md navbar-light bg-light py-4 fixed-top"
@@ -44,16 +43,16 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="#">Home</a>
+              <a class="nav-link" href="#start">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
+              <a class="nav-link" href="#about">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Authors</a>
+              <a class="nav-link" href="#authors">Authors</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
+              <a class="nav-link" href="#contact">Contact</a>
             </li>
           </ul>
         </div>
@@ -409,7 +408,9 @@
                   placeholder="Message"
                   rows="5"
                 ></textarea>
-                <button class="btn btn-primary btn-block my-3 btn-lg">Send</button>
+                <button class="btn btn-primary btn-block my-3 btn-lg">
+                  Send
+                </button>
               </div>
             </form>
           </div>
@@ -420,11 +421,12 @@
       </div>
     </section>
     <!-- Main Footer -->
-    <footer id="main-footer" class="bg-primary py-5 text-center text-light lead">
+    <footer
+      id="main-footer"
+      class="bg-primary py-5 text-center text-light lead"
+    >
       <div class="container">
-        <div class="col">
-           Copyright &copy; <span id="year"></span>
-        </div>
+        <div class="col">Copyright &copy; <span id="year"></span></div>
       </div>
     </footer>
 
@@ -446,8 +448,34 @@
     ></script>
 
     <script>
-      // Get the current year for the copyright
       $("#year").text(new Date().getFullYear());
+
+      // Scroll Spy
+      $("body").scrollspy({ target: "#main-nav" });
+
+      // Add smooth scrolling
+      $("#main-nav a").on("click", function(e) {
+        // Check for a hash value
+        if (this.hash !== "") {
+          // Prevent default behavior
+          e.preventDefault();
+
+          // Store hash
+          const hash = this.hash;
+
+          // Animate smooth scroll
+          $("html, body").animate(
+            {
+              scrollTop: $(hash).offset().top
+            },
+            900,
+            function() {
+              // Add hash to URL after scroll
+              window.location.hash = hash;
+            }
+          );
+        }
+      });
     </script>
   </body>
 </html>
